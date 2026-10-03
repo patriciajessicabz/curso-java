@@ -17,7 +17,6 @@ public class Scannear {
         System.out.println("Seu nome é: " + nome);
         System.out.println("Sua idade é: " + idade);
 
-        sc.close();
       }
 
       }

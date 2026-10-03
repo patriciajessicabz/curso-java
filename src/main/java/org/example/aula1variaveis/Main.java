@@ -18,7 +18,7 @@ public class Main {
         double nota = 9.5;
 
         int idade = 35;
-        int anoNascimento = 1991;
+        int anoNascimento = 1989;
 
     }
 }

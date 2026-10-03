@@ -1,3 +1,5 @@
 package org.example.aula08;
 
-public class Atividade {
+public class Atividade1 {
+
+}
