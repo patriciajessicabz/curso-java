@@ -1,4 +1,4 @@
-package org.example.lrevisaosemana01;
+package org.example.revisaosemana01;
 
 public class Pet4 {
     /* 4 - Crie uma classe chamada Pet.

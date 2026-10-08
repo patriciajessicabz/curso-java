@@ -1,4 +1,4 @@
-package org.example.lrevisaosemana01;
+package org.example.revisaosemana01;
 
 public class Produto5 {
     /* 5 - Crie uma classe chamada Produto com os atributos nome (String) e preco (double).
