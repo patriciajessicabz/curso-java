@@ -1,4 +1,4 @@
-package org.example.lrevisaosemana01;
+package org.example.revisaosemana01;
 
 import java.util.Scanner;
 
