@@ -13,16 +13,16 @@ public class MainAtividade6Petshop {
         Pet meuPet = new Pet();
 
         System.out.print("Nome do pet: ");
-        meuPet.nome = sc.nextLine();
+        meuPet.setNome(sc.nextLine());
 
         System.out.print("Espécie: ");
-        meuPet.especie = sc.nextLine();
+        meuPet.setEspecie(sc.nextLine());
 
         System.out.print("Peso (kg): ");
-        meuPet.peso = sc.nextDouble();
+        meuPet.setPeso(sc.nextDouble());
 
         // Calcular o porte
-        meuPet.porte = meuPet.definirPorte();
+        meuPet.setPorte(meuPet.definirPorte());
 
         // 3. Guardar o pet na primeira posição (índice 0) do array
         listaDePets[0] = meuPet;
@@ -30,10 +30,10 @@ public class MainAtividade6Petshop {
         // 4. Imprimir os dados buscando direto da posição 0 do array
         System.out.println("\n--- PETS CADASTRADOS ---");
         System.out.printf("%s (%s) - %.1f kg - Porte %s\n",
-                listaDePets[0].nome,
-                listaDePets[0].especie,
-                listaDePets[0].peso,
-                listaDePets[0].porte);
+                listaDePets[0].getNome(),
+                listaDePets[0].getEspecie(),
+                listaDePets[0].getPeso(),
+                listaDePets[0].definirPorte());
 
     }
 }

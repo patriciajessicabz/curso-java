@@ -7,31 +7,24 @@ public class MainAtividade3Petshop {
 
         Scanner sc = new Scanner(System.in);
 
-        Petshop meuPet = new Petshop();
+        Pet meuPet = new Pet();
 
         System.out.print("Nome do pet: ");
-        meuPet.nome = sc.nextLine();
+        meuPet.setNome(sc.nextLine());
 
         System.out.print("Espécie: ");
-        meuPet.especie = sc.nextLine();
+        meuPet.setEspecie(sc.nextLine());
 
         System.out.print("Peso (kg): ");
-        meuPet.peso = sc.nextDouble();
+        meuPet.setPeso(sc.nextDouble());
 
-        String porte;
-        if (meuPet.peso < 10) {
-            porte = "Pequeno";
-        } else if (meuPet.peso < 25) {
-            porte = "Médio";
-        } else {
-            porte = "Grande";
-        }
+        meuPet.setPorte(meuPet.definirPorte());
 
         System.out.println("\n=== FICHA DO PET ===");
-        System.out.println("Nome: " + meuPet.nome);
-        System.out.println("Espécie: " + meuPet.especie);
-        System.out.printf("Peso: %.1f kg\n", meuPet.peso);
-        System.out.println("Porte: " + porte);
+        System.out.println("Nome: " + meuPet.getNome());
+        System.out.println("Espécie: " + meuPet.getEspecie());
+        System.out.printf("Peso: %.1f kg\n", meuPet.getPeso());
+        System.out.println("Porte: " + meuPet.getPorte());
 
     }
 }

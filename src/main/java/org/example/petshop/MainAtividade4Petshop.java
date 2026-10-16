@@ -12,28 +12,28 @@ public class MainAtividade4Petshop {
 
                 // Leitura guardando DIRETO dentro do objeto
                 System.out.print("Nome do pet: ");
-                meuPet.nome = sc.nextLine();
+                meuPet.setNome(sc.nextLine());
 
                 System.out.print("Espécie: ");
-                meuPet.especie = sc.nextLine();
+                meuPet.setEspecie(sc.nextLine());
 
                 System.out.print("Peso (kg): ");
-                meuPet.peso = sc.nextDouble();
+                meuPet.setPeso(sc.nextDouble());
 
                 // Lógica de negócio guardando o porte no objeto
-                if (meuPet.peso < 10) {
-                    meuPet.porte = "Pequeno";
-                } else if (meuPet.peso < 25) {
-                    meuPet.porte = "Médio";
+                if (meuPet.getPeso() < 10) {
+                    meuPet.setPorte("Pequeno");
+                } else if (meuPet.getPeso() < 25) {
+                    meuPet.setPorte("Médio");
                 } else {
-                    meuPet.porte = "Grande";
+                    meuPet.setPorte("Grande");
                 }
 
                 // Impressão da ficha lendo do objeto
                 System.out.println("\n=== FICHA DO PET ===");
-                System.out.println("Nome: " + meuPet.nome);
-                System.out.println("Espécie: " + meuPet.especie);
-                System.out.printf("Peso: %.1f kg\n", meuPet.peso);
-                System.out.println("Porte: " + meuPet.porte);
+                System.out.println("Nome: " + meuPet.getNome());
+                System.out.println("Espécie: " + meuPet.getEspecie());
+                System.out.printf("Peso: %.1f kg\n", meuPet.getPeso());
+                System.out.println("Porte: " + meuPet.getPorte());
     }
 }
