@@ -5,10 +5,8 @@ import java.util.Scanner;
 public class MainAtividade7Petshop {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
-        Pet[] lista = new Pet[5];
+        Petshop petshop = new Petshop();
         int opcao = -1;
-        int total = 0;
 
         while (opcao != 0) {
             System.out.println("\n=== PETSHOP ===");
@@ -19,52 +17,51 @@ public class MainAtividade7Petshop {
 
             opcao = sc.nextInt();
             sc.nextLine(); // Limpa o buffer
-
             switch (opcao) {
                 case 1:
-                    if (total < lista.length) {
-                        Pet novoPet = new Pet();
+                    Pet novoPet = new Pet();
+                    System.out.print("Nome do pet: ");
+                    novoPet.setNome(sc.nextLine());
 
-                        System.out.print("Nome do pet: ");
-                        novoPet.nome = sc.nextLine();
+                    System.out.print("Espécie: ");
+                    novoPet.setEspecie(sc.nextLine());
 
-                        System.out.print("Espécie: ");
-                        novoPet.especie = sc.nextLine();
+                    System.out.print("Peso (kg): ");
+                    novoPet.setPeso(sc.nextDouble());
+                    sc.nextLine();
 
-                        System.out.print("Peso (kg): ");
-                        novoPet.peso = sc.nextDouble();
-                        sc.nextLine();
+                    novoPet.setPorte(novoPet.definirPorte());
+                    System.out.println("Porte: " +  novoPet.getPorte());
 
-                        novoPet.porte = novoPet.definirPorte();
-
-                        lista[total] = novoPet;
-                        total++;
-
-                        System.out.println("Pet cadastrado! Agora são " + total + " pet(s).");
-                    } else {
+                    if(petshop.cadastrarPet(novoPet)){
+                        System.out.println("Pet cadastrado com sucesso!");
+                    }else{
                         System.out.println("Limite de pets atingido!");
                     }
                     break;
 
-                case 2:
-                    System.out.println("\n--- PETS CADASTRADOS ---");
-                    if (total == 0) {
-                        System.out.println("Nenhum pet cadastrado.");
-                    } else {
-                        for (int i = 0; i < total; i++) {
-                            System.out.println(lista[i].nome + " (" + lista[i].especie + ") - " +
-                                    lista[i].peso + " kg - Porte " + lista[i].porte);
+                    case 2:
+                        System.out.println("\n--- PETS CADASTRADOS ---");
+                        if (petshop.getTotal() == 0) {
+                            System.out.println("Nenhum pet cadastrado.");
+                        } else {
+                            for (int i = 0; i < petshop.getTotal(); i++) {
+                                Pet pet = petshop.getPet(i);
+                                System.out.println("Nome: " + pet.getNome());
+                                System.out.println("Especie: " + pet.getEspecie());
+                                System.out.println("Peso: " + pet.getPeso());
+                                System.out.println("Porte: " + pet.getPorte());
+                            }
                         }
-                    }
-                    break;
+                        break;
 
-                case 0:
-                    System.out.println("Até logo!");
-                    break;
+                    case 0:
+                        System.out.println("Até logo!");
+                        break;
 
-                default:
-                    System.out.println("Opção inválida.");
-            }
+                    default:
+                        System.out.println("Opção inválida.");
+                }
         }
 
 
